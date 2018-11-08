@@ -12,9 +12,11 @@ Rails.application.routes.draw do
 
   resources :orders, only: [:create, :show]
 
+
   namespace :admin do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
+    resources :sales, only: [:index]
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
